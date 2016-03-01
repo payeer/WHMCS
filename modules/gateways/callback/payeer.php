@@ -1,8 +1,24 @@
 <?php
+/*
+If you are using and old WHMCS version and this callback doesn't work, uncomment these includes and comment out the New WHMCS Versions block below
+# Old WHMCS Versions
 include("../../../dbconnect.php");
 include("../../../includes/functions.php");
 include("../../../includes/gatewayfunctions.php");
 include("../../../includes/invoicefunctions.php");
+# /Old WHMCS Versions
+*/
+
+/*
+# New WHMCS Versions
+*/
+require("../../../init.php");
+$whmcs->load_function('gateway');
+$whmcs->load_function('invoice');
+/*
+# /New WHMCS Versions
+*/
+
 
 $gatewaymodule = 'payeer';
 $gateway = getGatewayVariables($gatewaymodule);
